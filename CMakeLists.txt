@@ -11,7 +11,10 @@ endif()
 
 project ("OpenGL")
 
-add_compile_options(/W3 /WX)
+if (MSVC)
+  add_compile_options(/W3 /WX)
+endif()
 
 # Include sub-projects.
-add_subdirectory ("OpenGL_01_01")
+add_subdirectory(glad)
+add_subdirectory (OpenGL_01_01)
